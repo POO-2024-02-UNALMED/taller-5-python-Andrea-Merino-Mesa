@@ -1,5 +1,4 @@
 from zooAnimales.animal import Animal
-
 class Mamifero (Animal):
     
     _listado=[]
@@ -14,7 +13,7 @@ class Mamifero (Animal):
     
     @classmethod
     def cantidadMamiferos(cls):
-        return len(cls._listado.len)
+        return len(cls._listado)
     
     @classmethod
     def crearCaballo (cls,nom,ed,gen):

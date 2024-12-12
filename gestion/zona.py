@@ -1,4 +1,3 @@
-
 class Zona:
 
     def __init__(self,nom=0,zoo=None):

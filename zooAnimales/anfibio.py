@@ -1,5 +1,4 @@
 from zooAnimales.animal import Animal
-
 class Anfibio (Animal):
     
     _listado=[]
@@ -46,7 +45,7 @@ class Anfibio (Animal):
         pass
     
     def isVenenoso(self):
-        return self._pelaje
+        return self._venenoso
 	
     def setVenenoso(self,ven):
         self._venenoso=ven

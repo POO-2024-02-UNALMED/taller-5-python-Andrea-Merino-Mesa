@@ -1,4 +1,3 @@
-
 class Animal (object):
     
     _totalAnimales=0
@@ -14,18 +13,18 @@ class Animal (object):
      return "desplazarse"
     
     def totalPorTipo():
-        from gestion.mamifero import Mamifero
-        from gestion.ave import Ave
-        from gestion.reptil import Reptil
-        from gestion.anfibio import Anfibio
-        from gestion.pez import Pez
+        from zooAnimales.mamifero import Mamifero
+        from zooAnimales.ave import Ave
+        from zooAnimales.reptil import Reptil
+        from zooAnimales.anfibio import Anfibio
+        from zooAnimales.pez import Pez
         
-        return "Mamiferos: "+str(Mamifero.cantidadMamiferos())+"\n"+"Aves: "+str(Ave.cantidadAves())+"\n"+"Reptiles: "+str(Reptil.cantidadReptiless())+"\n"+"Peces: "+str(Pez.cantidadPeces())+"\n"+"Anfibios: "+str(Anfibio.cantidadAnfibios());		
+        return "Mamiferos : "+str(Mamifero.cantidadMamiferos())+"\n"+"Aves : "+str(Ave.cantidadAves())+"\n"+"Reptiles : "+str(Reptil.cantidadReptiles())+"\n"+"Peces : "+str(Pez.cantidadPeces())+"\n"+"Anfibios : "+str(Anfibio.cantidadAnfibios());		
 	
     def toString(self):
         if self.zona==None or self.zona.getZoo()==None:
-            return "Mi nombre es "+self.nombre+", tengo una edad de "+self.edad+", habito en "+self.habitat+" y mi genero es "+self.genero
-        return "Mi nombre es "+self.nombre+", tengo una edad de "+self.edad+", habito en "+self.habitat+" y mi genero es "+self.genero+", la zona en la que me ubico es "+self.zona.getNombre()+", en el"+self.zona.getZoo().getNombre()+"."
+            return "Mi nombre es "+str(self._nombre)+", tengo una edad de "+str(self._edad)+", habito en "+str(self._habitat)+" y mi genero es "+str(self._genero)
+        return "Mi nombre es "+str(self._nombre)+", tengo una edad de "+str(self._edad)+", habito en "+str(self._habitat)+" y mi genero es "+str(self._genero)+", la zona en la que me ubico es"+str(self.zona.getNombre())+", en el "+str(self.zona.getZoo().getNombre())+"."
 	
     @classmethod
     def getTotalAnimales(cls):
