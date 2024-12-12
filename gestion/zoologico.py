@@ -1,14 +1,6 @@
-from zooAnimales import Animal
-from multimethod import multimethod
-
 class Zoologico:
-    
-    @multimethod
-    def __init__(self):
-      self.__init__(None, None) 
-      
-    @multimethod
-    def __init__(self,nom:str,ubi:str):
+
+    def __init__(self,nom=None,ubi=None):
         self._nombre=nom
         self._ubicacion=ubi
         self._zonas=[]

@@ -1,14 +1,6 @@
-from gestion import Zoologico
-from multimethod import multimethod
-
 class Zona:
-    
-    @multimethod
-    def __init__(self):
-      self.__init__(None, None) 
-      
-    @multimethod
-    def __init__(self,nom:str,zoo:Zoologico):
+
+    def __init__(self,nom=0,zoo=None):
         self._nombre=nom
         self._zoo=zoo 
         self._animales=[]

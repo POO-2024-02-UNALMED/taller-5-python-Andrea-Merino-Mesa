@@ -1,21 +1,15 @@
-from zooAnimales import Animal
-from multimethod import multimethod
+from zooAnimales.animal import Animal
 class Reptil (Animal):
     
     _listado=[]
     iguanas=0
     serpientes=0
-    
-    @multimethod
-    def __init__(self):
-      super().__init__(None, 0, None, None) 
-      
-    @multimethod
-    def __init__(self,nom:str, ed:int, hab:str, gen:bool, esc:str, larg:int):
+
+    def __init__(self,nom=None, ed=0, hab=None, gen=False, esc=None, larg=0):
         super().__init__(nom, ed, hab, gen)
         self._colorEscamas=esc
         self._largoCola=larg
-        self.setListado(self)
+        Reptil.setListado(self)
     
     @classmethod
     def cantidadReptiles(cls):
@@ -23,15 +17,13 @@ class Reptil (Animal):
 	
     @classmethod
     def crearIguana (cls,nom,ed,gen):
-        cls.iguanas+=1
-        iguana=Reptil
-        return iguana.__init__(nom,ed,"humedal",gen,"verde",3)
+        Reptil.iguanas+=1
+        return Reptil(nom,ed,"humedal",gen,"verde",3)
 
     @classmethod
     def crearSerpiente (cls,nom,ed,gen):
-        cls.serpientes+=1
-        serpiente=Reptil
-        return serpiente.__init__(nom,ed,"jungla",gen,"blanco",1)
+        Reptil.serpientes+=1
+        return Reptil(nom,ed,"jungla",gen,"blanco",1)
     
     @classmethod
     def getListado(cls):

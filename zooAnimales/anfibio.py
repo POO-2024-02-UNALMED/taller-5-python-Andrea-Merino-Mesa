@@ -1,37 +1,29 @@
-from zooAnimales import Animal
-from multimethod import multimethod
+from zooAnimales.animal import Animal
 class Anfibio (Animal):
     
     _listado=[]
     ranas=0
     salamandras=0
-    
-    @multimethod
-    def __init__(self):
-      super().__init__(None, 0, None, None) 
-      
-    @multimethod
-    def __init__(self,nom:str, ed:int, hab:str, gen:bool, col:str, veneno:bool):
+
+    def __init__(self,nom=None, ed=0, hab=None, gen=False, col=None, veneno=False):
         super().__init__(nom, ed, hab, gen)
         self._colorPiel=col
         self._venenoso=veneno
-        self.setListado(self)
+        Anfibio.setListado(self)
     
     @classmethod
     def cantidadAnfibios(cls):
         return cls._listado.len()
-	
+    
     @classmethod
     def crearRana (cls,nom,ed,gen):
-        cls.ranas+=1
-        rana=Anfibio
-        return rana.__init__(nom,ed,"selva",gen,"rojo",True)
-
+        Anfibio.ranas+=1
+        return Anfibio(nom,ed,"selva",gen,"rojo",True)
+    
     @classmethod
     def crearSalamandra (cls,nom,ed,gen):
-        cls.salamandras+=1
-        salamandra=Anfibio
-        return salamandra.__init__(nom,ed,"selva",gen,"negro y amarillo",False)
+        Anfibio.salamandras+=1
+        return Anfibio(nom,ed,"selva",gen,"negro y amarillo",False)
     
     @classmethod
     def getListado(cls):

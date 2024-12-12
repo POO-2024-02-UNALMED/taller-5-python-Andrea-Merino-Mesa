@@ -1,17 +1,11 @@
-from zooAnimales import Animal
-from multimethod import multimethod
+from zooAnimales.animal import Animal
 class Ave (Animal):
     
     _listado=[]
     aguilas=0
     halcones=0
-    
-    @multimethod
-    def __init__(self):
-      super().__init__(None, 0, None, None) 
-      
-    @multimethod
-    def __init__(self,nom:str, ed:int, hab:str, gen:bool, col:str):
+
+    def __init__(self,nom=None, ed=0, hab=None, gen=False, col=None):
         super().__init__(nom, ed, hab, gen)
         self._colorPlumas=col
         self.setListado(self)
@@ -23,14 +17,12 @@ class Ave (Animal):
     @classmethod
     def crearHalcon (cls,nom,ed,gen):
         cls.halcones+=1
-        halcon=Ave
-        return halcon.__init__(nom,ed,"montanas",gen,"cafe glorioso")
+        return Ave(nom,ed,"montanas",gen,"cafe glorioso")
 
     @classmethod
     def crearAguila (cls,nom,ed,gen):
         cls.aguilas+=1
-        aguila=Ave
-        return aguila.__init__(nom,ed,"montanas",gen,"blanco y amarillo")
+        return Ave(nom,ed,"montanas",gen,"blanco y amarillo")
     
     @classmethod
     def getListado(cls):
@@ -40,6 +32,9 @@ class Ave (Animal):
     def setListado(cls,mam):
         cls._listado.append(mam)
         pass
+    
+    def movimiento():
+        return "volar"
     
     def getColorPlumas(self):
         return self._colorPlumas

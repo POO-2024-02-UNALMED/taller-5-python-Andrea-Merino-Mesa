@@ -1,13 +1,6 @@
-from gestion import Zona;
-from multimethod import multimethod
-class Animal:
-    
+class Animal (object):
     _totalAnimales=0
-    @multimethod
-    def __init__(self):
-      self.__init__(None, 0, None, None) 
-    @multimethod
-    def __init__(self,nom:str, ed:int, hab:str, gen:bool):
+    def __init__(self,nom=None, ed=0, hab=None, gen=False):
         self._nombre=nom
         self._edad=ed
         self._habitat=hab
@@ -19,7 +12,7 @@ class Animal:
      return "desplazarse"
     
     def totalPorTipo():
-        return "Mamiferos: "+Mamifero.cantidadMamiferos()+"\n"+"Aves: "+Ave.cantidadAves()+"\n"+"Reptiles: "+Reptil.cantidadReptiless()+"\n"+"Peces: "+Peces.cantidadPeces()+"\n"+"Anfibios: "+Anfibio.cantidadAnfibios();	
+        return "Mamiferos: "+str(Mamifero.cantidadMamiferos())+"\n"+"Aves: "+str(Ave.cantidadAves())+"\n"+"Reptiles: "+str(Reptil.cantidadReptiless())+"\n"+"Peces: "+str(Pez.cantidadPeces())+"\n"+"Anfibios: "+str(Anfibio.cantidadAnfibios());	
 	
     def __str__(self):
         if self.zona==None or self.zona.getZoo()==None:
@@ -69,3 +62,4 @@ class Animal:
     def setZona(self,zona):
         self._zona=zona
         pass
+

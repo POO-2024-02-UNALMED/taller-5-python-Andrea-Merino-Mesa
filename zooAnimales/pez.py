@@ -1,17 +1,11 @@
-from zooAnimales import Animal
-from multimethod import multimethod
+from zooAnimales.animal import Animal
 class Pez (Animal):
     
     _listado=[]
     salmones=0
     bacalaos=0
-    
-    @multimethod
-    def __init__(self):
-      super().__init__(None, 0, None, None) 
-      
-    @multimethod
-    def __init__(self,nom:str, ed:int, hab:str, gen:bool, cesc:str, ale:int):
+
+    def __init__(self,nom=None, ed=0, hab=None, gen=False, cesc=None, ale=0):
         super().__init__(nom, ed, hab, gen)
         self._colorEscamas=cesc
         self._cantidadAletas=ale
@@ -24,14 +18,12 @@ class Pez (Animal):
     @classmethod
     def crearSalmon (cls,nom,ed,gen):
         cls.salmones+=1
-        salmon=Pez
-        return salmon.__init__(nom,ed,"oceano",gen,"rojo",6)
+        return Pez(nom,ed,"oceano",gen,"rojo",6)
 
     @classmethod
     def crearBacalao (cls,nom,ed,gen):
         cls.bacalaos+=1
-        bacalao=Pez
-        return bacalao.__init__(nom,ed,"oceano",gen,"gris",6)
+        return Pez(nom,ed,"oceano",gen,"gris",6)
     
     @classmethod
     def getListado(cls):
@@ -42,6 +34,9 @@ class Pez (Animal):
         cls._listado.append(mam)
         pass
     
+    def movimiento():
+        return "nadar"
+        
     def getColorEscamas(self):
         return self._colorEscamas
 	
