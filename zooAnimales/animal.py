@@ -1,4 +1,6 @@
+
 class Animal (object):
+    
     _totalAnimales=0
     def __init__(self,nom=None, ed=0, hab=None, gen=False):
         self._nombre=nom
@@ -12,7 +14,7 @@ class Animal (object):
      return "desplazarse"
     
     def totalPorTipo():
-        return "Mamiferos: "+str(Mamifero.cantidadMamiferos())+"\n"+"Aves: "+str(Ave.cantidadAves())+"\n"+"Reptiles: "+str(Reptil.cantidadReptiless())+"\n"+"Peces: "+str(Pez.cantidadPeces())+"\n"+"Anfibios: "+str(Anfibio.cantidadAnfibios());	
+        return "Mamiferos: "+str(Animal.cantidadMamiferos())+"\n"+"Aves: "+str(Animal.cantidadAves())+"\n"+"Reptiles: "+str(Animal.cantidadReptiless())+"\n"+"Peces: "+str(Animal.cantidadPeces())+"\n"+"Anfibios: "+str(Animal.cantidadAnfibios());		
 	
     def toString(self):
         if self.zona==None or self.zona.getZoo()==None:
@@ -62,9 +64,3 @@ class Animal (object):
     def setZona(self,zona):
         self._zona=zona
         pass
-
-from zooAnimales.anfibio import Anfibio
-from zooAnimales.ave import Ave
-from zooAnimales.mamifero import Mamifero
-from zooAnimales.pez import Pez
-from zooAnimales.reptil import Reptil
