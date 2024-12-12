@@ -45,7 +45,7 @@ class Anfibio (Animal):
         self._colorPiel=col
         pass
     
-    def getVenenoso(self):
+    def isVenenoso(self):
         return self._pelaje
 	
     def setVenenoso(self,ven):

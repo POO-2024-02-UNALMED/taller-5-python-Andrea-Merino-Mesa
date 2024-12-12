@@ -7,14 +7,20 @@ class Animal (object):
         self._edad=ed
         self._habitat=hab
         self._genero=gen
-        self._zona=None
+        self.zona=None
         self.setTotalAnimales(1)
         
     def movimiento():
      return "desplazarse"
     
     def totalPorTipo():
-        return "Mamiferos: "+str(Animal.cantidadMamiferos())+"\n"+"Aves: "+str(Animal.cantidadAves())+"\n"+"Reptiles: "+str(Animal.cantidadReptiless())+"\n"+"Peces: "+str(Animal.cantidadPeces())+"\n"+"Anfibios: "+str(Animal.cantidadAnfibios());		
+        from gestion.mamifero import Mamifero
+        from gestion.ave import Ave
+        from gestion.reptil import Reptil
+        from gestion.anfibio import Anfibio
+        from gestion.pez import Pez
+        
+        return "Mamiferos: "+str(Mamifero.cantidadMamiferos())+"\n"+"Aves: "+str(Ave.cantidadAves())+"\n"+"Reptiles: "+str(Reptil.cantidadReptiless())+"\n"+"Peces: "+str(Pez.cantidadPeces())+"\n"+"Anfibios: "+str(Anfibio.cantidadAnfibios());		
 	
     def toString(self):
         if self.zona==None or self.zona.getZoo()==None:
@@ -64,3 +70,5 @@ class Animal (object):
     def setZona(self,zona):
         self._zona=zona
         pass
+    
+        

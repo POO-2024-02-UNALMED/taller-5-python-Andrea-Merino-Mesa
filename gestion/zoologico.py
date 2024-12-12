@@ -8,8 +8,8 @@ class Zoologico:
     
     def cantidadTotalAnimales(self):
         ca=0
-        for i in range (self._zonas.len()):
-            ca+=self.getZona().get(i).cantidadAnimales()
+        for i in range (len(self._zonas)):
+            ca+=self.getZona()[i].cantidadAnimales()
         return ca
     
     def setNombre(self,nom):
