@@ -13,7 +13,7 @@ class Pez (Animal):
     
     @classmethod
     def cantidadPeces(cls):
-        return cls._listado.len()
+        return len(cls._listado)
 	
     @classmethod
     def crearSalmon (cls,nom,ed,gen):
@@ -44,7 +44,7 @@ class Pez (Animal):
         self._colorEscamas=col
         pass
     
-    def isCantidadAletas(self):
+    def getCantidadAletas(self):
         return self._cantidadAletas
 	
     def setCantidadAletas(self,ale):

@@ -12,7 +12,7 @@ class Ave (Animal):
     
     @classmethod
     def cantidadAves(cls):
-        return cls._listado.len()
+        return len(cls._listado)
 	
     @classmethod
     def crearHalcon (cls,nom,ed,gen):

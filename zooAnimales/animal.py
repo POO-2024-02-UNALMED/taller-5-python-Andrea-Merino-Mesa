@@ -14,7 +14,7 @@ class Animal (object):
     def totalPorTipo():
         return "Mamiferos: "+str(Mamifero.cantidadMamiferos())+"\n"+"Aves: "+str(Ave.cantidadAves())+"\n"+"Reptiles: "+str(Reptil.cantidadReptiless())+"\n"+"Peces: "+str(Pez.cantidadPeces())+"\n"+"Anfibios: "+str(Anfibio.cantidadAnfibios());	
 	
-    def __str__(self):
+    def toString(self):
         if self.zona==None or self.zona.getZoo()==None:
             return "Mi nombre es "+self.nombre+", tengo una edad de "+self.edad+", habito en "+self.habitat+" y mi genero es "+self.genero
         return "Mi nombre es "+self.nombre+", tengo una edad de "+self.edad+", habito en "+self.habitat+" y mi genero es "+self.genero+", la zona en la que me ubico es "+self.zona.getNombre()+", en el"+self.zona.getZoo().getNombre()+"."
@@ -63,3 +63,8 @@ class Animal (object):
         self._zona=zona
         pass
 
+from zooAnimales.anfibio import Anfibio
+from zooAnimales.ave import Ave
+from zooAnimales.mamifero import Mamifero
+from zooAnimales.pez import Pez
+from zooAnimales.reptil import Reptil

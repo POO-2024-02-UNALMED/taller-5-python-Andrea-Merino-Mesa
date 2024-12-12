@@ -13,7 +13,7 @@ class Anfibio (Animal):
     
     @classmethod
     def cantidadAnfibios(cls):
-        return cls._listado.len()
+        return len(cls._listado)
     
     @classmethod
     def crearRana (cls,nom,ed,gen):
@@ -37,10 +37,10 @@ class Anfibio (Animal):
     def movimiento():
         return "saltar"
     
-    def getcolorPiel(self):
+    def getColorPiel(self):
         return self._colorPiel
 	
-    def setcolorPiel(self,col):
+    def setColorPiel(self,col):
         self._colorPiel=col
         pass
     

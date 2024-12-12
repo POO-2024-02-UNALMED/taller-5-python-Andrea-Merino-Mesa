@@ -41,7 +41,7 @@ class Mamifero (Animal):
         self._patas=pat
         pass
     
-    def getPelaje(self):
+    def isPelaje(self):
         return self._pelaje
 	
     def setPelaje(self,pel):

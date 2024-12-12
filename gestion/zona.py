@@ -29,3 +29,4 @@ class Zona:
 
     def getAnimales(self):
         return self._animales
+    
